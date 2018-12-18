@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MaterialModule } from './material.module';
 
 
 
@@ -68,6 +68,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     FormsModule,
+    MaterialModule,
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
@@ -81,8 +82,7 @@ const appRoutes: Routes = [
     MatTooltipModule,
     FlexLayoutModule,
     MatChipsModule,
-    MatFormFieldModule,
-    
+    MatFormFieldModule
 
     
     
