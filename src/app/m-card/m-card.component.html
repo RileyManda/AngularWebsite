@@ -1,0 +1,146 @@
+
+    <!--Start Mobile-->
+<mat-card>
+    <mat-chip-list>
+        <mat-chip color="warn" selected>Mobile Development</mat-chip>
+    </mat-chip-list>
+   
+    <mat-grid-list cols="1">               
+               
+     <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+       <mat-card *ngFor="let mobile of mobile">
+           <mat-card-header>
+             <img mat-card-avatar [src]="mobile.img">
+             <mat-card-title>{{mobile.title}}</mat-card-title>
+             <mat-card-subtitle>Really, they are!</mat-card-subtitle>
+           </mat-card-header>
+           <img mat-card-image [src]="mobile.img">
+           <mat-card-content>
+             <p>Something pretty...</p>
+           </mat-card-content>
+         </mat-card>
+         </div>
+ 
+         </mat-grid-list>      
+       </mat-card>
+  <!--End Mobile-->
+     
+
+  <mat-card>
+      <mat-chip-list>
+          <mat-chip color="accent" selected>Web Development</mat-chip>
+      </mat-chip-list>
+          <!--Start Web dev gallery-->
+                 <mat-grid-list cols="1">          
+                 
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+                <mat-card *ngFor="let web of web">
+                    <mat-card-header>
+                      <img mat-card-avatar [src]="web.img">
+                      <mat-card-title>{{web.title}}</mat-card-title>
+                      <mat-card-subtitle>Really, they are!</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image [src]="web.img">
+                    <mat-card-content>
+                      <p>Something pretty...</p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+                </mat-grid-list>  
+                </mat-card>    
+       <!--End Web Dev Gallery-->
+
+
+
+
+          <!--Start php dev gallery-->
+          <mat-card>
+              <mat-chip-list>
+                  <mat-chip color="primary" selected>Php Development</mat-chip>
+              </mat-chip-list>
+          <mat-grid-list cols="1">          
+                 
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+                  <mat-card *ngFor="let php of php">
+                      <mat-card-header>
+                        <img mat-card-avatar [src]="php.img">
+                        <mat-card-title>{{php.title}}</mat-card-title>
+                        <mat-card-subtitle>Really, they are!</mat-card-subtitle>
+                      </mat-card-header>
+                      <img mat-card-image [src]="php.img">
+                      <mat-card-content>
+                        <p>Something pretty...</p>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                  </mat-grid-list>  
+                  </mat-card>    
+         <!--End php Dev Gallery-->
+  
+  
+
+  <!--UX/UI Multimedia-->
+  <mat-card>
+      <mat-chip-list>
+          <mat-chip color="basic" selected>UX/UI</mat-chip>
+      </mat-chip-list>
+      <mat-grid-list cols="1">               
+                 
+       <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+         <mat-card *ngFor="let uxui of uxui">
+             <mat-card-header>
+               <img mat-card-avatar [src]="uxui.img">
+               <mat-card-title>{{uxui.title}}</mat-card-title>
+               <mat-card-subtitle>Really, they are!</mat-card-subtitle>
+             </mat-card-header>
+             <img mat-card-image [src]="uxui.img">
+             <mat-card-content>
+               <p>Something pretty...</p>
+             </mat-card-content>
+           </mat-card>
+           </div>
+           </mat-grid-list>      
+         </mat-card>
+     <!--End Ux/UI-->
+
+
+
+
+
+
+
+
+  <!--Start Multimedia-->
+  <mat-card>
+      <mat-chip-list>
+          <mat-chip color="warn" selected>Multimedia</mat-chip>
+      </mat-chip-list>
+      <mat-grid-list cols="1">               
+                 
+       <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+         <mat-card *ngFor="let multimedia of multimedia">
+             <mat-card-header>
+               <img mat-card-avatar [src]="multimedia.img">
+               <mat-card-title>{{multimedia.title}}</mat-card-title>
+               <mat-card-subtitle>Really, they are!</mat-card-subtitle>
+             </mat-card-header>
+             <img mat-card-image [src]="multimedia.img">
+             <mat-card-content>
+               <p>Something pretty...</p>
+             </mat-card-content>
+           </mat-card>
+           </div>
+           </mat-grid-list>      
+         </mat-card>
+     <!--End Multimedia-->
+
+      
+
+
+
+
+
+
+
+
+

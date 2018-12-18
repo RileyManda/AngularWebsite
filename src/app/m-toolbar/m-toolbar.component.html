@@ -1,0 +1,94 @@
+<mat-sidenav-container class="sidenav-container">
+<!--Side Nav-->
+<mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+[attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="!(isHandset$ | async)">
+        <mat-toolbar>
+            <mat-chip-list>
+                <mat-chip color="warn" selected>RM</mat-chip>
+            </mat-chip-list>  
+            <mat-divider></mat-divider>     
+      </mat-toolbar>
+      <mat-nav-list>
+          <mat-divider></mat-divider>
+        <a mat-list-item routerLink="./about" matTooltip="Who am i"
+        tooltip-position="above"><mat-icon>person</mat-icon>About</a> 
+        <a mat-list-item routerLink="./m-exp" matTooltip="Industry Experience"
+        tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Xp</a>
+        <a mat-list-item routerLink="./m-cv" matTooltip="Download or view my CV"
+        tooltip-position="above" ><mat-icon>link</mat-icon>CV</a>
+        <a mat-list-item routerLink="./m-matrix" matTooltip="Skills Matrix"
+        tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Skills Matrix</a>
+        <a mat-list-item routerLink="./m-portfolio" matTooltip="Portfolio"
+        tooltip-position="above"><mat-icon>computer</mat-icon>Portfolio</a>
+        <a mat-list-item routerLink="./m-hobbies" matTooltip="Hobbies"
+        tooltip-position="above"><mat-icon>free_breakfast</mat-icon>Hobbies</a>
+        <mat-divider></mat-divider>  
+
+        <a mat-list-item  routerLink="./"><mat-icon>copyright</mat-icon>RM|2018</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+         <!-- Side Nav Content Here -->
+            <!-- Tool Bar Start -->
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>RileyManda</span>
+      
+        <span class="spacer"></span>
+          <!--Hide items on sm screens-->
+          <div fxShow="true" fxHide.lt-md="true">
+          <a routerLink="./about" matTooltip="About Me"
+          tooltip-position="above" mat-button>
+              <mat-icon>person</mat-icon>
+              About Me
+            </a>
+            <a routerLink="./m-exp" matTooltip="Industry Experience"
+            tooltip-position="above" mat-button>
+                <mat-icon>bar_chart</mat-icon>
+                Xp
+              </a>
+              <a routerLink="./m-cv" matTooltip="Download/View My CV"
+              tooltip-position="above" mat-button>
+                  <mat-icon>link</mat-icon>
+                  CV
+                </a>
+                <a routerLink="./m-matrix" matTooltip="Skills Matrix"
+                tooltip-position="above" mat-button>
+                    <mat-icon>bar_chart</mat-icon>
+                    Skills Matrix
+                  </a>
+                  <a routerLink="./m-portfolio" matTooltip="My Portfolio"
+                  tooltip-position="above" mat-button>
+                      <mat-icon>computer</mat-icon>
+                      Portfolio
+                    </a>
+                    <a routerLink="./m-hobbies" matTooltip="Hobbies"
+                    tooltip-position="above" mat-button>
+                        <mat-icon>free_breakfast</mat-icon>
+                        Hobbies
+                      </a>
+                      <button mat-icon-button [mat-menu-trigger-for]="menu">
+                          <mat-icon>more_vert</mat-icon>
+                        </button>
+                    </div>
+      </mat-toolbar>
+      <!-- Tool Bar End -->
+    </mat-sidenav-content>
+    <!--Side Nav End-->
+  </mat-sidenav-container>
+  
+    <!--More Vert Menu-->
+    <mat-menu x-position="before" #menu="matMenu">
+        <button mat-menu-item><mat-icon>email</mat-icon>
+          <span class="label">Contact Me</span></button>
+      </mat-menu>
+      
