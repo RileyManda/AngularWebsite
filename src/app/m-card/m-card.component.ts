@@ -15,7 +15,7 @@ export class MCardComponent implements OnInit {
   multimedia = [
     {
       id: 1,
-      title: 'A natural view',
+      title: 'Natural',
       img: 'https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg'
     },
     {

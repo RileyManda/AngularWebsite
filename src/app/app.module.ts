@@ -35,6 +35,7 @@ import {
   MatInputModule,
   
   
+  
 } from '@angular/material';
 import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -50,6 +51,7 @@ import { MMatrixComponent } from './m-matrix/m-matrix.component';
 import { MChatfabComponent } from './m-chatfab/m-chatfab.component';
 import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
+import { MTabsComponent } from './m-tabs/m-tabs.component';
 
 
 
@@ -79,7 +81,8 @@ const appRoutes: Routes = [
     MMatrixComponent,
     MChatfabComponent,
     LoginComponent,
-    AngularFirestore.bind(firebaseConfig)
+    MTabsComponent,
+    
     
     
   ],

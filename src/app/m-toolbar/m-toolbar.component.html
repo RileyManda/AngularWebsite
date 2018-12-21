@@ -12,20 +12,20 @@
       </mat-toolbar>
       <mat-nav-list>
           <mat-divider></mat-divider>
-        <a mat-list-item routerLink="./about" matTooltip="Who am i"
+        <a mat-list-item routerLink="./about" routerLinkActive="active" matTooltip="Who am i"
         tooltip-position="above"><mat-icon>person</mat-icon>About</a> 
-        <a mat-list-item routerLink="./m-exp" matTooltip="Industry Experience"
+        <a mat-list-item routerLink="./m-exp" routerLinkActive="active" matTooltip="Industry Experience"
         tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Xp</a>
-        <a mat-list-item routerLink="./m-cv" matTooltip="Download or view my CV"
+        <a mat-list-item routerLink="./m-cv" routerLinkActive="active" matTooltip="Download or view my CV"
         tooltip-position="above" ><mat-icon>link</mat-icon>CV</a>
-        <a mat-list-item routerLink="./m-matrix" matTooltip="Skills Matrix"
+        <a mat-list-item routerLink="./m-matrix" routerLinkActive="active" matTooltip="Skills Matrix"
         tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Skills Matrix</a>
-        <a mat-list-item routerLink="./m-portfolio" matTooltip="Portfolio"
+        <a mat-list-item routerLink="./m-portfolio"  routerLinkActive="active"matTooltip="Portfolio"
         tooltip-position="above"><mat-icon>computer</mat-icon>Portfolio</a>
-        <a mat-list-item routerLink="./m-hobbies" matTooltip="Hobbies"
+        <a mat-list-item routerLink="./m-hobbies"  routerLinkActive="active"matTooltip="Hobbies"
         tooltip-position="above"><mat-icon>free_breakfast</mat-icon>Hobbies</a>
         <mat-divider></mat-divider> 
-        <a mat-list-item routerLink="./login" matTooltip="LogIn As Admin"
+        <a mat-list-item routerLink="./login"  routerLinkActive="active" matTooltip="LogIn As Admin"
         tooltip-position="above"><mat-icon>lock</mat-icon>LogIn</a>
         <mat-divider></mat-divider>  
 
@@ -48,7 +48,7 @@
       
         <span class="spacer"></span>
           <!--Hide items on sm screens-->
-          <div fxShow="true" fxHide.lt-md="true">
+          <div fxShow="true" fxHide.xs="true">
           <a routerLink="./about" matTooltip="About Me"
           tooltip-position="above" mat-button>
               <mat-icon>person</mat-icon>
@@ -79,10 +79,11 @@
                         <mat-icon>free_breakfast</mat-icon>
                         Hobbies
                       </a>
-                      <button mat-icon-button [mat-menu-trigger-for]="menu">
-                          <mat-icon>more_vert</mat-icon>
-                        </button>
+                     
                     </div>
+                    <button mat-icon-button [mat-menu-trigger-for]="menu">
+                        <mat-icon>more_vert</mat-icon>
+                      </button>
       </mat-toolbar>
       <!-- Tool Bar End -->
     </mat-sidenav-content>

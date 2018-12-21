@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material';
 import { MBottomSheetComponent } from './m-bottom-sheet/m-bottom-sheet.component';
+import "hammerjs"
 
 
 @Component({
