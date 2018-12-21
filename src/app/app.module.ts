@@ -8,8 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 
+export const firebaseConfig = {
+  apiKey: '',
+  authDomain: '',
+  databaseURL: '',
+  storageBucket: '',
+  messagingSenderId: ''
+};
 
 import {
   MatButtonModule,
@@ -24,6 +32,9 @@ import {
   MatBottomSheet,
   MatChipsModule,
   MatFormFieldModule,
+  MatInputModule,
+  
+  
 } from '@angular/material';
 import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -37,6 +48,11 @@ import { MPortfolioComponent } from './m-portfolio/m-portfolio.component';
 import { MHobbiesComponent } from './m-hobbies/m-hobbies.component';
 import { MMatrixComponent } from './m-matrix/m-matrix.component';
 import { MChatfabComponent } from './m-chatfab/m-chatfab.component';
+import { LoginComponent } from './login/login.component';
+import { AngularFireModule } from '@angular/fire';
+
+
+
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent},
@@ -45,6 +61,7 @@ const appRoutes: Routes = [
   { path: 'm-portfolio', component: MPortfolioComponent},
   { path: 'm-hobbies', component: MHobbiesComponent},
   { path: 'm-matrix', component: MMatrixComponent},
+  { path: 'login', component: LoginComponent},
 ];
 
 
@@ -60,7 +77,11 @@ const appRoutes: Routes = [
     MPortfolioComponent,
     MHobbiesComponent,
     MMatrixComponent,
-    MChatfabComponent
+    MChatfabComponent,
+    LoginComponent,
+    AngularFirestore.bind(firebaseConfig)
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -82,7 +103,8 @@ const appRoutes: Routes = [
     MatTooltipModule,
     FlexLayoutModule,
     MatChipsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
 
     
     
