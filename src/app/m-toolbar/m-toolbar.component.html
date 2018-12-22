@@ -17,7 +17,7 @@
         <a mat-list-item routerLink="./m-exp" routerLinkActive="active" matTooltip="Industry Experience"
         tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Xp</a>
         <a mat-list-item routerLink="./m-cv" routerLinkActive="active" matTooltip="Download or view my CV"
-        tooltip-position="above" ><mat-icon>link</mat-icon>CV</a>
+        tooltip-position="above" ><mat-icon>picture_as_pdf</mat-icon>CV</a>
         <a mat-list-item routerLink="./m-matrix" routerLinkActive="active" matTooltip="Skills Matrix"
         tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Skills Matrix</a>
         <a mat-list-item routerLink="./m-portfolio"  routerLinkActive="active"matTooltip="Portfolio"
@@ -61,7 +61,7 @@
               </a>
               <a routerLink="./m-cv" matTooltip="Download/View My CV"
               tooltip-position="above" mat-button>
-                  <mat-icon>link</mat-icon>
+                  <mat-icon>picture_as_pdf</mat-icon>
                   CV
                 </a>
                 <a routerLink="./m-matrix" matTooltip="Skills Matrix"
@@ -92,7 +92,12 @@
   
     <!--More Vert Menu-->
     <mat-menu x-position="before" #menu="matMenu">
-        <button mat-menu-item><mat-icon>email</mat-icon>
+        <a routerLink="./m-cv" matTooltip="Download/View My CV"
+        tooltip-position="above" mat-button>
+            <mat-icon>picture_as_pdf</mat-icon>
+            CV
+          </a>
+        <button mat-menu-items (click)="openDialog()"><mat-icon>email</mat-icon>
           <span class="label">Contact Me</span></button>
       </mat-menu>
-      
+   

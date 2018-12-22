@@ -1,22 +1,37 @@
-<div class="container">
-<mat-card>
-  <mat-card-header>
-    <img src="assets/favi/favicon.ico">
-    <mat-card-title>Admin LogIn</mat-card-title>
-    <mat-card-subtitle>Reserved for admins only</mat-card-subtitle>
-  </mat-card-header>
-  <!--<img src="assets/favi/favicon.ico">-->
+<div class="container" id="login">
+    <mat-card  class="cardwidth">
+      <mat-card-header class="card-header">
+       <img src="assets/favi/favicon-16x16.png">
+        <br>
+        <mat-card-title> Admin Login </mat-card-title>
+        <mat-card-subtitle>Reserved for Admin</mat-card-subtitle>
+      </mat-card-header>
+  
   <mat-card-content>
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="UserName" value="">
+  <form (submit)="loginuser($event)">
+    <mat-form-field class="login-elements">
+        <input matInput placeholder="Username">
       </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Password" value="" type="password">
+  
+  <div>
+    <mat-form-field class="login-elements">
+        <input matInput type="password" appearance="outline"  placeholder="Password" [type]="hide? 'password':'text'">
+        <mat-hint color="warn" *ngIf="password">Entered an incorrect password</mat-hint>
+        <mat-icon matSuffix (click)="hide=!hide">{{hide? 'visibility_off':'visibility'}}</mat-icon>
       </mat-form-field>
-      </form>
-      <button mat-button color="warn">LogIn</button>
-    <button mat-button>DashBoard</button>
+    
+  </div>
+  <br>
+ 
+    <button mat-raised-button color="primary" value="Login" [routerLink]="['/dashboard']" class="login-elements">Login</button>
+    <div id="login">
+    <button mat-button color="primary" value="password" id="equalposition">Forgot Password</button><br><br>
+    <button mat-button color="primary" value="Register" id="l" >Register An Acount</button>
+     </div>
+ 
+  
+  </form>
   </mat-card-content>
-</mat-card>
-</div>
+  
+  </mat-card>
+  </div>

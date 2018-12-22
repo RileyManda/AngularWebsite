@@ -29,13 +29,11 @@ import {
   MatToolbarModule,
   MatBottomSheetModule,
   MatTooltipModule,
-  MatBottomSheet,
   MatChipsModule,
   MatFormFieldModule,
   MatInputModule,
-  
-  
-  
+  MatDialogModule,
+
 } from '@angular/material';
 import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -52,6 +50,10 @@ import { MChatfabComponent } from './m-chatfab/m-chatfab.component';
 import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { MTabsComponent } from './m-tabs/m-tabs.component';
+import { MContactmeComponent } from './m-contactme/m-contactme.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+
 
 
 
@@ -64,6 +66,7 @@ const appRoutes: Routes = [
   { path: 'm-hobbies', component: MHobbiesComponent},
   { path: 'm-matrix', component: MMatrixComponent},
   { path: 'login', component: LoginComponent},
+  { path: 'dashboard', component: DashboardComponent},
 ];
 
 
@@ -82,6 +85,8 @@ const appRoutes: Routes = [
     MChatfabComponent,
     LoginComponent,
     MTabsComponent,
+    MContactmeComponent,
+    DashboardComponent,
     
     
     
@@ -107,13 +112,16 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     MatChipsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    
+    
 
     
     
   ],
   providers: [],
-  entryComponents:[MBottomSheetComponent],
+  entryComponents:[MBottomSheetComponent,MContactmeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
