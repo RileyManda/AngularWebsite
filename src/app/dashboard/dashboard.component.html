@@ -1,25 +1,106 @@
-
 <mat-card>
-                
-              <mat-chip-list>
-               <mat-chip color="warn" selected>Add New Project</mat-chip>
-              </mat-chip-list>
-              <br>
-              <mat-divider></mat-divider> 
-            
 
-             
-              <mat-horizontal-stepper>
-                  <mat-step label="Step 1">
-                    Content 1
-                  </mat-step>
-                  <mat-step label="Step 2">
-                    Content 2
-                  </mat-step>
-                  <mat-step label="Step 3">
-                      Content 3
-                    </mat-step>
-                </mat-horizontal-stepper>
-         
-      </mat-card>
+  <!--Grid-->
+<mat-grid-list cols="1"> 
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="left">
+<!--About-->
+<mat-card>
+    <mat-card-header> <mat-chip-list>
+        <mat-chip color="warn" selected>About</mat-chip>
+       </mat-chip-list></mat-card-header>  
+          <br>
+          <mat-divider></mat-divider> 
+    <mat-form-field>
+        <textarea matInput placeholder="About Me"></textarea>
+      </mat-form-field>
+</mat-card>
+<!--About End-->
+
+<!--Cv-->
+<mat-card>
+    <mat-card-header> <mat-chip-list>
+        <mat-chip color="warn" selected>Cv</mat-chip>
+       </mat-chip-list></mat-card-header>  
+       <br>
+       <mat-divider></mat-divider> 
+       <br>
+ <button><mat-icon>link</mat-icon></button><p>Upload a New Resume</p>
+</mat-card>
+<!--Cv End-->
+<br>
+<!--Hobbies-->
+<mat-card>
+    <mat-card-header> <mat-chip-list>
+        <mat-chip color="primary" selected>Hobbies</mat-chip>
+       </mat-chip-list></mat-card-header>  
+       <br>
+       <mat-divider></mat-divider> 
+       <br>
+    <mat-form-field>
+        <textarea matInput placeholder="Hobbies"></textarea>
+      </mat-form-field>
+</mat-card>
+<!--Hobbies End-->
+
+<br>
+</div>
+</mat-grid-list>
+<!--Grid End-->
+<br>
+
+
+
+  <!--Xp-->
+  <mat-card>
+      <mat-card-header> <mat-chip-list>
+          <mat-chip color="primary" selected>Xp</mat-chip>
+         </mat-chip-list></mat-card-header>  
+            <br>
+   <mat-card><button><mat-icon>link</mat-icon></button><p>Upload a New Resume</p></mat-card>
+  </mat-card>
+  <!--Xp End-->
+
+  <br>
+
+<!--Skils Matrix-->
+<mat-card>
+    <mat-card-header> <mat-chip-list>
+        <mat-chip color="primary" selected>Skills Matrix</mat-chip>
+       </mat-chip-list></mat-card-header>  
+          <br>
+ <mat-card><button><mat-icon>link</mat-icon></button><p>Upload a New Resume</p></mat-card>
+</mat-card>
+<!--Skils Matrix End-->
+
+<br>
+ 
+  <!--Portfolio-->
+  <mat-card>
+      <mat-card-header> <mat-chip-list>
+          <mat-chip color="primary" selected>PORTFOLIO</mat-chip>
+         </mat-chip-list></mat-card-header>  
+     
+      <br>
+      <mat-divider></mat-divider> 
+      <br>
+      <mat-chip-list>
+          <mat-chip color="warn" selected>Add New Project</mat-chip>
+         </mat-chip-list>
+     
+      <mat-horizontal-stepper>
+          <mat-step label="Step 1">
+            Content 1
+          </mat-step>
+          <mat-step label="Step 2">
+            Content 2
+          </mat-step>
+          <mat-step label="Step 3">
+              Content 3
+            </mat-step>
+        </mat-horizontal-stepper>
+ 
+</mat-card>
+<!--Portfolio End-->
+
+
 
