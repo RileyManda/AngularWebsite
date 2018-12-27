@@ -12,6 +12,12 @@
       </mat-toolbar>
       <mat-nav-list>
           <mat-divider></mat-divider>
+          <a mat-list-item routerLink="./dashboard" routerLinkActive="active"
+          matTooltip="DashBoard is reserved for Admins Only" tooltip-position="above">
+            <mat-icon class="icon">dashboard</mat-icon>  
+            <span class="label">Dashboard</span>
+          </a>
+          <mat-divider></mat-divider> 
         <a mat-list-item routerLink="./about" routerLinkActive="active" matTooltip="Who am i"
         tooltip-position="above"><mat-icon>person</mat-icon>About</a> 
         <a mat-list-item routerLink="./m-exp" routerLinkActive="active" matTooltip="Industry Experience"
@@ -20,11 +26,12 @@
         tooltip-position="above" ><mat-icon>picture_as_pdf</mat-icon>CV</a>
         <a mat-list-item routerLink="./m-matrix" routerLinkActive="active" matTooltip="Skills Matrix"
         tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Skills Matrix</a>
-        <a mat-list-item routerLink="./m-portfolio"  routerLinkActive="active"matTooltip="Portfolio"
+        <a mat-list-item routerLink="./m-portfolio"  routerLinkActive="active" matTooltip="Portfolio"
         tooltip-position="above"><mat-icon>computer</mat-icon>Portfolio</a>
-        <a mat-list-item routerLink="./m-hobbies"  routerLinkActive="active"matTooltip="Hobbies"
+        <a mat-list-item routerLink="./m-hobbies"  routerLinkActive="active" matTooltip="Hobbies"
         tooltip-position="above"><mat-icon>free_breakfast</mat-icon>Hobbies</a>
         <mat-divider></mat-divider> 
+
         <a mat-list-item routerLink="./login"  routerLinkActive="active" matTooltip="LogIn As Admin"
         tooltip-position="above"><mat-icon>lock</mat-icon>LogIn</a>
         <mat-divider></mat-divider>  
@@ -48,8 +55,8 @@
       
         <span class="spacer"></span>
           <!--Hide items on sm screens-->
-          <div fxShow="true" fxHide.xs="true">
-          <a routerLink="./about" matTooltip="About Me"
+           <!-- <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs></div>-->
+        <div fxFlex fxShow="true" fxHide.xs="true"><a routerLink="./about" matTooltip="About Me"
           tooltip-position="above" mat-button>
               <mat-icon>person</mat-icon>
               About Me
@@ -93,6 +100,9 @@
     <!--More Vert Menu-->
   
       <mat-menu x-position="before" #menu="matMenu">
-          <button mat-menu-item><mat-icon>email</mat-icon>
+          <button mat-menu-item matTooltip="Contact Me"
+          tooltip-position="above"><mat-icon>email</mat-icon>
             <span class="label">Contact Me</span></button>
+            <button mat-menu-item routerLink="./login"  routerLinkActive="active" matTooltip="LogIn As Admin"
+            tooltip-position="above"><mat-icon>lock</mat-icon>LogIn</button>
         </mat-menu>

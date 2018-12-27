@@ -5,7 +5,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -33,6 +33,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatDialogModule,
+  MatStepperModule,
 
 } from '@angular/material';
 import { AboutComponent } from './about/about.component';
@@ -87,6 +88,8 @@ const appRoutes: Routes = [
     MTabsComponent,
     MContactmeComponent,
     DashboardComponent,
+  
+   
     
     
     
@@ -114,6 +117,10 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatStepperModule,
+   
+    
+  
     
     
 
@@ -127,10 +134,8 @@ const appRoutes: Routes = [
 export class AppModule { 
 
   constructor() {}
-
-
-
   ngOnInit() {
+   
   }
 
 
