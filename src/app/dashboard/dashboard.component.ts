@@ -2,23 +2,46 @@ import { Component,OnInit,ViewChild } from '@angular/core';
 import { FormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {SelectionModel} from '@angular/cdk/collections';
 import {MatTableDataSource,MatPaginator} from '@angular/material';
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  years: number;
-  xp: string;
+
+//xP(Experience)
+export interface XpElement {
+  startyear: number;
+  endyear: number;
+  position: string;
+  company: string;
+  
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Java', years: 5, xp: 'bar'},
-  {position: 2, name: 'Php', years: 4, xp: 'bar'},
-  {position: 3, name: 'NodeJs', years: 1, xp: 'bar'},
-  {position: 4, name: 'Swift', years: 4, xp: 'bar'},
-  {position: 5, name: 'Kotlin', years: 1.5, xp: 'bar'},
-  {position: 6, name: 'Android Dev', years: 5, xp: 'bar'},
-  {position: 7, name: 'IOS Dev', years: 14.0067, xp: 'bar'},
-  {position: 8, name: 'AngularJS', years: 15.9994, xp: 'bar'},
-  {position: 9, name: 'UI/UX', years: 18.9984, xp: 'uiux'},
-  {position: 10, name: 'SQL', years: 20.1797, xp: 'sql'},
+const XPELEMENT_DATA: XpElement[] = [
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+  {startyear: 2007,endyear: 2007, position: 'Dev', company: 'ewew'},
+];
+
+
+//Skills Matrix
+export interface MxElement {
+  skill: string;
+  years: number;
+  matrix: number;
+}
+const MXELEMENT_DATA: MxElement[] = [
+  {skill: 'Java', years: 5, matrix: 100},
+  {skill: 'Php', years: 4, matrix: 50},
+  {skill: 'NodeJs', years: 1, matrix: 50},
+  {skill:'Swift', years: 4, matrix: 50},
+  {skill:'Kotlin', years: 1.5, matrix: 25},
+  {skill: 'Android Dev', years: 5, matrix: 100},
+  {skill: 'IOS Dev', years: 5, matrix: 100},
+  {skill:  'AngularJS', years: 1, matrix: 100},
+  {skill: 'UI/UX', years: 5, matrix: 100},
+  {skill:  'SQL', years: 4, matrix: 90},
 ];
 
 @Component({
@@ -28,10 +51,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class DashboardComponent implements OnInit {
 
-  displayedColumns: string[] = ['select', 'position', 'name', 'years', 'xp'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  selection = new SelectionModel<PeriodicElement>(true, []);
+  xpdisplayedColumns: string[] = ['select', 'startyear', 'endyear', 'position', 'company'];
+  xpdataSource = new MatTableDataSource<XpElement>(XPELEMENT_DATA);
+  xpselection = new SelectionModel<XpElement>(true, []);
+
+  mxdisplayedColumns: string[] = ['select', 'skill', 'years', 'matrix'];
+  mxdataSource = new MatTableDataSource<MxElement>(MXELEMENT_DATA);
+  mxselection = new SelectionModel<MxElement>(true, []);
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
+
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
@@ -40,16 +69,30 @@ export class DashboardComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
 
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
+  isXpAllSelected() {
+    const numSelected = this.xpselection.selected.length;
+    const numRows = this.xpdataSource.data.length;
     return numSelected === numRows;
 
   }
-  masterToggle() {
-    this.isAllSelected() ?
-        this.selection.clear() :
-        this.dataSource.data.forEach(row => this.selection.select(row));
+  xpmasterToggle() {
+    this.isXpAllSelected() ?
+        this.xpselection.clear() :
+        this.xpdataSource.data.forEach(row => this.xpselection.select(row));
+  }
+
+
+
+  isMxAllSelected() {
+    const numSelected = this.mxselection.selected.length;
+    const numRows = this.mxdataSource.data.length;
+    return numSelected === numRows;
+
+  }
+  mxmasterToggle() {
+    this.isMxAllSelected() ?
+        this.mxselection.clear() :
+        this.mxdataSource.data.forEach(row => this.mxselection.select(row));
   }
 
   ngOnInit() {
@@ -65,7 +108,8 @@ export class DashboardComponent implements OnInit {
     this.forthFormGroup = this._formBuilder.group({
       forthCtrl: ['', Validators.required]
     });
-    this.dataSource.paginator = this.paginator;
+    this.xpdataSource.paginator = this.paginator;
+    //this.mxdataSource.paginator = this.paginator;
 
     
   }

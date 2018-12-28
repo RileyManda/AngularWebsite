@@ -16,51 +16,52 @@
          <mat-divider></mat-divider> 
          <br>
          <mat-card-content>
-                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <table mat-table [dataSource]="xpdataSource" class="mat-elevation-z8">
 
                         <!-- Checkbox Column -->
                         <ng-container matColumnDef="select">
                           <th mat-header-cell *matHeaderCellDef>
-                            <mat-checkbox (change)="$event ? masterToggle() : null"
-                                          [checked]="selection.hasValue() && isAllSelected()"
-                                          [indeterminate]="selection.hasValue() && !isAllSelected()">
+                            <mat-checkbox (change)="$event ? xpmasterToggle() : null"
+                                          [checked]="xpselection.hasValue() && isXpAllSelected()"
+                                          [indeterminate]="xpselection.hasValue() && !isXpAllSelected()">
                             </mat-checkbox>
                           </th>
                           <td mat-cell *matCellDef="let row">
                             <mat-checkbox (click)="$event.stopPropagation()"
-                                          (change)="$event ? selection.toggle(row) : null"
-                                          [checked]="selection.isSelected(row)">
+                                          (change)="$event ? xpselection.toggle(row) : null"
+                                          [checked]="xpselection.isSelected(row)">
                             </mat-checkbox>
                           </td>
                         </ng-container>
                       
+                        <!-- StartYear Column -->
+                        <ng-container matColumnDef="startyear">
+                          <th mat-header-cell *matHeaderCellDef><b>From</b> </th>
+                          <td mat-cell *matCellDef="let element"> {{element.startyear}} </td>
+                        </ng-container>
+
+                        <!-- EndYear Column -->
+                        <ng-container matColumnDef="endyear">
+                            <th mat-header-cell *matHeaderCellDef><b>To</b></th>
+                            <td mat-cell *matCellDef="let element"> {{element.endyear}} </td>
+                          </ng-container>
+                      
                         <!-- Position Column -->
                         <ng-container matColumnDef="position">
-                          <th mat-header-cell *matHeaderCellDef> No. </th>
+                          <th mat-header-cell *matHeaderCellDef> <b>Position</b> </th>
                           <td mat-cell *matCellDef="let element"> {{element.position}} </td>
                         </ng-container>
                       
-                        <!-- Name Column -->
-                        <ng-container matColumnDef="name">
-                          <th mat-header-cell *matHeaderCellDef> Name </th>
-                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        <!-- Company Column -->
+                        <ng-container matColumnDef="company">
+                          <th mat-header-cell *matHeaderCellDef> <b>Company</b> </th>
+                          <td mat-cell *matCellDef="let element"> {{element.company}} </td>
                         </ng-container>
                       
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="years">
-                          <th mat-header-cell *matHeaderCellDef> Years </th>
-                          <td mat-cell *matCellDef="let element"> {{element.years}} </td>
-                        </ng-container>
-                      
-                        <!-- Symbol Column -->
-                        <ng-container matColumnDef="xp">
-                          <th mat-header-cell *matHeaderCellDef> Xp </th>
-                          <td mat-cell *matCellDef="let element"> {{element.xp}} </td>
-                        </ng-container>
-                      
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"
-                            (click)="selection.toggle(row)">
+            
+                        <tr mat-header-row *matHeaderRowDef="xpdisplayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: xpdisplayedColumns;"
+                            (click)="xpselection.toggle(row)">
                         </tr>
                       </table>
                       <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
@@ -97,15 +98,65 @@
 
 <!----------------------Skills Matrix and Porfolio------------------------------------------>
 <!--Skils Matrix-->
+
 <mat-card>
     <mat-card-header> 
-        <span><mat-icon>bar_chart</mat-icon></span>
+          <span><mat-icon>bar_chart</mat-icon></span>
         <mat-chip-list>
         <mat-chip color="primary" selected>Skills Matrix</mat-chip>
-       </mat-chip-list></mat-card-header>  
+       </mat-chip-list>
+      
+      </mat-card-header>  
+      <br>
+       <mat-divider></mat-divider> 
+       <br>
+       <mat-card-content>
+              <table mat-table [dataSource]="mxdataSource" class="mat-elevation-z8">
+
+                      <!-- Checkbox Column -->
+                      <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                          <mat-checkbox (change)="$event ? mxmasterToggle() : null"
+                                        [checked]="mxselection.hasValue() && isMxAllSelected()"
+                                        [indeterminate]="mxselection.hasValue() && !isMxAllSelected()">
+                          </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                          <mat-checkbox (click)="$event.stopPropagation()"
+                                        (change)="$event ? mxselection.toggle(row) : null"
+                                        [checked]="mxselection.isSelected(row)">
+                          </mat-checkbox>
+                        </td>
+                      </ng-container>
+                    
+                      <!-- Position Column -->
+                      <ng-container matColumnDef="skill">
+                        <th mat-header-cell *matHeaderCellDef> Skill </th>
+                        <td mat-cell *matCellDef="let element"> {{element.skill}} </td>
+                      </ng-container>
+                    
+                      <!-- Name Column -->
+                      <ng-container matColumnDef="years">
+                        <th mat-header-cell *matHeaderCellDef> Years </th>
+                        <td mat-cell *matCellDef="let element"> {{element.years}} </td>
+                      </ng-container>
+                    
+                      <!-- Weight Column -->
+                      <ng-container matColumnDef="matrix">
+                        <th mat-header-cell *matHeaderCellDef> Matrix </th>
+                        <td mat-cell *matCellDef="let element"> {{element.matrix}} </td>
+                      </ng-container>
+                    
+                      <tr mat-header-row *matHeaderRowDef="mxdisplayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: mxdisplayedColumns;"
+                          (click)="mxselection.toggle(row)">
+                      </tr>
+                    </table>
+                   
+       </mat-card-content>
           <br>
- <mat-card><button><mat-icon>link</mat-icon></button><p>Skills Matrix Table(work in progress)</p></mat-card>
 </mat-card>
+
 <!--Skils Matrix End-->
 
 <br>
