@@ -9,7 +9,12 @@ import { FormsModule, FormBuilder, FormGroup, Validators, ReactiveFormsModule } 
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
 import { AngularFirestore } from '@angular/fire/firestore';
-
+import { RouterModule, Routes,Event,NavigationCancel,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+ } from '@angular/router';
 
 export const firebaseConfig = {
   apiKey: '',
@@ -34,10 +39,14 @@ import {
   MatInputModule,
   MatDialogModule,
   MatStepperModule,
-
+  MatProgressBar,
+  MatHeaderCell,
+  MatTableModule,
+  MatCheckboxModule,
+  MatPaginatorModule,
 } from '@angular/material';
+
 import { AboutComponent } from './about/about.component';
-import { RouterModule, Routes } from '@angular/router';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MToolbarComponent } from './m-toolbar/m-toolbar.component';
 import { MCardComponent } from './m-card/m-card.component';
@@ -53,7 +62,6 @@ import { AngularFireModule } from '@angular/fire';
 import { MTabsComponent } from './m-tabs/m-tabs.component';
 import { MContactmeComponent } from './m-contactme/m-contactme.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 
 
 
@@ -88,6 +96,9 @@ const appRoutes: Routes = [
     MTabsComponent,
     MContactmeComponent,
     DashboardComponent,
+    MatProgressBar,
+   
+    
   
    
     
@@ -118,22 +129,24 @@ const appRoutes: Routes = [
     MatInputModule,
     MatDialogModule,
     MatStepperModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatPaginatorModule
+    
+    
    
     
-  
-    
-    
 
-    
-    
   ],
   providers: [],
   entryComponents:[MBottomSheetComponent,MContactmeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-
-  constructor() {}
+ 
+  constructor() {
+  
+  }
   ngOnInit() {
    
   }

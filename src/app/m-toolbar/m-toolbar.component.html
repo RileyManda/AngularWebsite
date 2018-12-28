@@ -4,14 +4,14 @@
 [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="!(isHandset$ | async)">
-        <mat-toolbar>
+        <mat-toolbar color="primary">
             <mat-chip-list>
                 <mat-chip color="warn" selected>RM</mat-chip>
             </mat-chip-list>  
             <mat-divider></mat-divider>     
       </mat-toolbar>
       <mat-nav-list>
-          <mat-divider></mat-divider>
+          <mat-divider ></mat-divider>
           <a mat-list-item routerLink="./dashboard" routerLinkActive="active"
           matTooltip="DashBoard is reserved for Admins Only" tooltip-position="above">
             <mat-icon class="icon">dashboard</mat-icon>  
@@ -100,7 +100,7 @@
   
     <!--More Vert Menu-->
   
-      <mat-menu x-position="before" #menu="matMenu">
+      <mat-menu x-position="before" #menu="matMenu" >
           <button mat-menu-item matTooltip="Contact Me"
           tooltip-position="above"><mat-icon>email</mat-icon>
             <span class="label">Contact Me</span></button>

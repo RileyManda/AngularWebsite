@@ -1,5 +1,17 @@
 
 <m-toolbar></m-toolbar>
+
+
+    <mat-progress-bar
+        class="progress-margin"
+        [color]="color"
+        [mode]="mode"
+        [value]="value"
+        [bufferValue]="bufferValue">
+    </mat-progress-bar>
+  
+  
 <m-chatfab (click)="openBottomSheet()"></m-chatfab>
 <!--<button mat-raised (click)="openDialog()">Open Dialog</button>-->
+
 <router-outlet></router-outlet> 
