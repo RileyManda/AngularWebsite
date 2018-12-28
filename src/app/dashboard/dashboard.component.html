@@ -1,10 +1,67 @@
 <mat-card>
 
- <!--Grid-->
- <mat-grid-list cols="1"> 
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="left">
+ <!-------------------------------------About|hobbies--------------------------------------------------->
+  <!--Grid-->
+<mat-grid-list cols="1"> 
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="left">
+<!--About-->
+<mat-card>
+  <mat-card-header>
+    <span><mat-icon>person</mat-icon></span>
+     <mat-chip-list>
+      <mat-chip color="warn" selected>About</mat-chip>
+     </mat-chip-list></mat-card-header>  
+        <br>
+        <mat-divider></mat-divider> 
+  <mat-form-field class="txt-full-width">
+      <textarea matInput placeholder="About Me"></textarea>
+    </mat-form-field>
+</mat-card>
+<!--About End-->
+<br>
+<!--Hobbies-->
+<mat-card>
+  <mat-card-header>
+      <span><mat-icon>free_breakfast</mat-icon></span>
+     <mat-chip-list>
+      <mat-chip color="primary" selected>Hobbies</mat-chip>
+     </mat-chip-list></mat-card-header>  
+     <br>
+     <mat-divider></mat-divider> 
+  <mat-form-field class="txt-full-width">
+      <textarea matInput placeholder="Hobbies"></textarea>
+    </mat-form-field>
+</mat-card>
+<!--Hobbies End-->
+<br>
+<!--Cv-->
+<mat-card>
+  <mat-card-header>
+          <span><mat-icon>picture_as_pdf</mat-icon></span> 
+      <mat-chip-list>
+      <mat-chip color="warn" selected>Cv</mat-chip>
+     </mat-chip-list></mat-card-header>  
+     <br>
+     <mat-divider></mat-divider> 
+     <mat-divider></mat-divider> 
+     <br>
+     <mat-card-content>
+       image preview of cv(work in progress)
+     </mat-card-content>
+        <br>
+     
+<button><mat-icon>link</mat-icon></button><p>Upload a New Resume</p>
+</mat-card>
+<!--Cv End-->
+</div>
+</mat-grid-list>
+<!--Grid End-->
+<!-------------------------------------About|hobbies End-------------------------------------------------->
+<br>
+ 
+   
   <!--Xp-->
-  <mat-card class="midcardwidth">
+  <mat-card>
       <mat-card-header> 
             <span><mat-icon>build</mat-icon></span>
           <mat-chip-list>
@@ -69,30 +126,6 @@
             <br>
   </mat-card>
   <!--Xp End-->
-
-<br>
-<!--Cv-->
-<mat-card class="midcardwidth">
-    <mat-card-header>
-            <span><mat-icon>picture_as_pdf</mat-icon></span> 
-        <mat-chip-list>
-        <mat-chip color="warn" selected>Cv</mat-chip>
-       </mat-chip-list></mat-card-header>  
-       <br>
-       <mat-divider></mat-divider> 
-       <mat-divider></mat-divider> 
-       <br>
-       <mat-card-content>
-         image preview of cv(work in progress)
-       </mat-card-content>
-          <br>
-       
- <button><mat-icon>link</mat-icon></button><p>Upload a New Resume</p>
-</mat-card>
-<!--Cv End-->
-</div>
-</mat-grid-list>
-<!--Grid End-->
   <br>
 
 
@@ -179,9 +212,13 @@
          <mat-horizontal-stepper linear #stepper>
           <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
             <form [formGroup]="firstFormGroup">
-              <ng-template matStepLabel>Title</ng-template>
-              <mat-form-field>
-                <input matInput placeholder="Project Title" formControlName="firstCtrl" required>
+              <ng-template matStepLabel>Project</ng-template>
+              <mat-form-field class="txt-full-width">
+                <input matInput placeholder="Title" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="txt-full-width">
+                <input matInput placeholder="Description" formControlName="firstCtrl" required>
               </mat-form-field>
               <div>
                 <button mat-button matStepperNext>Next</button>
@@ -192,7 +229,7 @@
          
           <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
             <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Category</ng-template>
+              <ng-template matStepLabel class="flex-child">Category</ng-template>
               <mat-form-field>
                   <mat-select formControlName="secondCtrl" required  [(value)]="selected">
                       <mat-option>None</mat-option>
@@ -212,23 +249,13 @@
             </form>
           </mat-step>
 
-          <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable">
-            <form [formGroup]="thirdFormGroup">
-              <ng-template matStepLabel>Description</ng-template>
-              <mat-form-field>
-                <input matInput placeholder="Description" formControlName="thirdCtrl" required>
-              </mat-form-field>
-              <div>
-                <button mat-button matStepperNext>Next</button>
-              </div>
-            </form>
-          </mat-step>
+      
 
-          <mat-step [stepControl]="forthFormGroup" [editable]="isEditable">
-              <form [formGroup]="forthFormGroup">
-                <ng-template matStepLabel>Image</ng-template>
+          <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable">
+              <form [formGroup]="thirdFormGroup">
+                <ng-template matStepLabel><p class="text-elements">Image</p></ng-template>
                 <mat-form-field>
-                  <input matInput placeholder="Image" formControlName="forthCtrl" required>
+                  <input matInput placeholder="Image" formControlName="thirdCtrl" required>
                 </mat-form-field>
                 <div>
                   <button mat-button matStepperNext>Next</button>
@@ -250,43 +277,3 @@
 <!------------------------------------Skills Marix|Portfolio End--------------------------------------->
 <br>
 
-<!-------------------------------------About|hobbies--------------------------------------------------->
-  <!--Grid-->
-<mat-grid-list cols="1"> 
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="left">
-<!--About-->
-<mat-card class="cardwidth">
-    <mat-card-header>
-      <span><mat-icon>person</mat-icon></span>
-       <mat-chip-list>
-        <mat-chip color="warn" selected>About</mat-chip>
-       </mat-chip-list></mat-card-header>  
-          <br>
-          <mat-divider></mat-divider> 
-    <mat-form-field>
-        <textarea matInput placeholder="About Me"></textarea>
-      </mat-form-field>
-</mat-card>
-<!--About End-->
-<br>
-<!--Hobbies-->
-<mat-card class="cardwidth">
-    <mat-card-header>
-        <span><mat-icon>free_breakfast</mat-icon></span>
-       <mat-chip-list>
-        <mat-chip color="primary" selected>Hobbies</mat-chip>
-       </mat-chip-list></mat-card-header>  
-       <br>
-       <mat-divider></mat-divider> 
-       <br>
-    <mat-form-field>
-        <textarea matInput placeholder="Hobbies"></textarea>
-      </mat-form-field>
-</mat-card>
-<!--Hobbies End-->
-<br>
-</div>
-</mat-grid-list>
-<!--Grid End-->
-<br>
-<!-------------------------------------About|hobbies End-------------------------------------------------->
