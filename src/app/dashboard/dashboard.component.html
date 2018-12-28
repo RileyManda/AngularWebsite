@@ -121,27 +121,74 @@
           <mat-chip color="warn" selected>Add New Project</mat-chip>
          </mat-chip-list>
      
-      <mat-horizontal-stepper>
-          <mat-step label="Title">
-              <form class="title-form">
-                  <mat-form-field class="title-full-width">
-                    <input matInput placeholder="Project name" value="Project Name">
-                  </mat-form-field>
-                  </form>
+         <mat-horizontal-stepper linear #stepper>
+          <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Title</ng-template>
+              <mat-form-field>
+                <input matInput placeholder="Project Title" formControlName="firstCtrl" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
           </mat-step>
-          <mat-step label="Description">
-              <form class="description-form">
-                  <mat-form-field class="description-full-width">
-                    <input matInput placeholder="Project Description" value="Project Description">
-                  </mat-form-field>
-                  </form>
+
+         
+          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Category</ng-template>
+              <mat-form-field>
+                  <mat-select formControlName="secondCtrl" required  [(value)]="selected">
+                      <mat-option>None</mat-option>
+                      <mat-option value="option1">Mobile Development</mat-option>
+                      <mat-option value="option2">Web Developement</mat-option>
+                      <mat-option value="option3">API</mat-option>
+                      <mat-option value="option4">Php Developement</mat-option>
+                      <mat-option value="option5">Python Projects</mat-option>
+                      <mat-option value="option6">UX/UI</mat-option>
+                      <mat-option value="option7">Multimedia</mat-option>
+                    </mat-select>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
           </mat-step>
-          <mat-step label="Upload Image">
-              Image
+
+          <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable">
+            <form [formGroup]="thirdFormGroup">
+              <ng-template matStepLabel>Description</ng-template>
+              <mat-form-field>
+                <input matInput placeholder="Description" formControlName="thirdCtrl" required>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="forthFormGroup" [editable]="isEditable">
+              <form [formGroup]="forthFormGroup">
+                <ng-template matStepLabel>Image</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Image" formControlName="forthCtrl" required>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
             </mat-step>
-            <mat-step label="Finish">
-                Preview
-              </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Publish</ng-template>
+            Preview
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+              <button mat-raised-button color="primary">Publish</button>
+            </div>
+          </mat-step>
         </mat-horizontal-stepper>
 </mat-card>
 <!--Portfolio End-->

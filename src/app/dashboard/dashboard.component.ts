@@ -32,6 +32,13 @@ export class DashboardComponent implements OnInit {
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  forthFormGroup: FormGroup;
+  selected = 'option2';
+  constructor(private _formBuilder: FormBuilder) {}
+
 
   isAllSelected() {
     const numSelected = this.selection.selected.length;
@@ -46,6 +53,18 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
+    this.forthFormGroup = this._formBuilder.group({
+      forthCtrl: ['', Validators.required]
+    });
     this.dataSource.paginator = this.paginator;
 
     

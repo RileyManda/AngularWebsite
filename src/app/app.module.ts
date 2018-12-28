@@ -44,6 +44,7 @@ import {
   MatTableModule,
   MatCheckboxModule,
   MatPaginatorModule,
+  MatSelectModule,
 } from '@angular/material';
 
 import { AboutComponent } from './about/about.component';
@@ -131,7 +132,10 @@ const appRoutes: Routes = [
     MatStepperModule,
     MatTableModule,
     MatCheckboxModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    MatSelectModule
+
     
     
    
