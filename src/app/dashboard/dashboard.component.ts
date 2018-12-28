@@ -5,20 +5,20 @@ import {MatTableDataSource,MatPaginator} from '@angular/material';
 export interface PeriodicElement {
   name: string;
   position: number;
-  weight: number;
-  symbol: string;
+  years: number;
+  xp: string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {position: 1, name: 'Java', years: 5, xp: 'bar'},
+  {position: 2, name: 'Php', years: 4, xp: 'bar'},
+  {position: 3, name: 'NodeJs', years: 1, xp: 'bar'},
+  {position: 4, name: 'Swift', years: 4, xp: 'bar'},
+  {position: 5, name: 'Kotlin', years: 1.5, xp: 'bar'},
+  {position: 6, name: 'Android Dev', years: 5, xp: 'bar'},
+  {position: 7, name: 'IOS Dev', years: 14.0067, xp: 'bar'},
+  {position: 8, name: 'AngularJS', years: 15.9994, xp: 'bar'},
+  {position: 9, name: 'UI/UX', years: 18.9984, xp: 'uiux'},
+  {position: 10, name: 'SQL', years: 20.1797, xp: 'sql'},
 ];
 
 @Component({
@@ -28,7 +28,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class DashboardComponent implements OnInit {
 
-  displayedColumns: string[] = ['select', 'position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['select', 'position', 'name', 'years', 'xp'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
   @ViewChild(MatPaginator) paginator: MatPaginator;
