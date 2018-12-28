@@ -1,3 +1,32 @@
 table {
     width: 100%;
   }
+  .text-elements{
+    width: 100%;
+  }
+  .cardwidth{
+    width: 45%;
+  
+  }
+
+  .midcardwidth{
+    width: 45%;
+  
+  }
+  .title-full-width {
+    width: 100%;
+  }
+  .title-form {
+    min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  }
+
+  .description-full-width {
+    width: 100%;
+  }
+  .description-form {
+    min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  }

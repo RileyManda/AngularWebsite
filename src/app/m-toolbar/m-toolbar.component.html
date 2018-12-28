@@ -17,9 +17,7 @@
             <mat-icon class="icon">dashboard</mat-icon>  
             <span class="label">Dashboard</span>
           </a>
-          <mat-divider></mat-divider> 
-        <a mat-list-item routerLink="./about" routerLinkActive="active" matTooltip="Who am i"
-        tooltip-position="above"><mat-icon>person</mat-icon>About</a> 
+          <mat-divider></mat-divider>
         <a mat-list-item routerLink="./m-exp" routerLinkActive="active" matTooltip="Industry Experience"
         tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Xp</a>
         <a mat-list-item routerLink="./m-cv" routerLinkActive="active" matTooltip="Download or view my CV"
@@ -28,6 +26,8 @@
         tooltip-position="above" ><mat-icon>bar_chart</mat-icon>Skills Matrix</a>
         <a mat-list-item routerLink="./m-portfolio"  routerLinkActive="active" matTooltip="Portfolio"
         tooltip-position="above"><mat-icon>computer</mat-icon>Portfolio</a>
+        <a mat-list-item routerLink="./about" routerLinkActive="active" matTooltip="Who am i"
+        tooltip-position="above"><mat-icon>person</mat-icon>About</a> 
         <a mat-list-item routerLink="./m-hobbies"  routerLinkActive="active" matTooltip="Hobbies"
         tooltip-position="above"><mat-icon>free_breakfast</mat-icon>Hobbies</a>
         <mat-divider></mat-divider> 
@@ -56,11 +56,7 @@
         <span class="spacer"></span>
           <!--Hide items on sm screens-->
            <!-- <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs></div>-->
-        <div fxFlex fxShow="true" fxHide.xs="true"><a routerLink="./about" matTooltip="About Me"
-          tooltip-position="above" mat-button>
-              <mat-icon>person</mat-icon>
-              About Me
-            </a>
+        <div fxFlex fxShow="true" fxHide.xs="true">
             <a routerLink="./m-exp" matTooltip="Industry Experience"
             tooltip-position="above" mat-button>
                 <mat-icon>bar_chart</mat-icon>
@@ -81,6 +77,11 @@
                       <mat-icon>computer</mat-icon>
                       Portfolio
                     </a>
+                    <a routerLink="./about" matTooltip="About Me"
+                    tooltip-position="above" mat-button>
+                        <mat-icon>person</mat-icon>
+                        About Me
+                      </a>
                     <a routerLink="./m-hobbies" matTooltip="Hobbies"
                     tooltip-position="above" mat-button>
                         <mat-icon>free_breakfast</mat-icon>
