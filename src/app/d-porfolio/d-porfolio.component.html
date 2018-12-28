@@ -1,0 +1,104 @@
+<mat-card>
+  <mat-card-header>
+      <span><mat-icon>computer</mat-icon></span>
+       <mat-chip-list>
+      <mat-chip color="primary" selected>PORTFOLIO</mat-chip>
+     </mat-chip-list></mat-card-header>  
+ 
+  <br>
+  <mat-divider></mat-divider> 
+  <br>
+  <mat-chip-list>
+      <mat-chip color="warn" selected>Add New Project</mat-chip>
+     </mat-chip-list>
+ 
+     <mat-horizontal-stepper linear #stepper>
+      <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Project</ng-template>
+          <mat-form-field class="txt-full-width">
+            <input matInput placeholder="Title" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <br>
+          <mat-form-field class="txt-full-width">
+            <input matInput placeholder="Description" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+     
+      <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel class="flex-child">Category</ng-template>
+          <mat-form-field>
+              <mat-select formControlName="secondCtrl" required  [(value)]="selected">
+                  <mat-option>None</mat-option>
+                  <mat-option value="option1">Mobile Development</mat-option>
+                  <mat-option value="option2">Web Developement</mat-option>
+                  <mat-option value="option3">API</mat-option>
+                  <mat-option value="option4">Php Developement</mat-option>
+                  <mat-option value="option5">Python Projects</mat-option>
+                  <mat-option value="option6">UX/UI</mat-option>
+                  <mat-option value="option6">UX/UI</mat-option>
+                </mat-select>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+  
+
+      <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable">
+          <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel><p class="text-elements">Image</p></ng-template>
+            <mat-form-field>
+              <input matInput placeholder="Image" formControlName="thirdCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+      <mat-step>
+        <ng-template matStepLabel>Publish</ng-template>
+       <p>PREVIEW</p>
+       <mat-divider></mat-divider>
+       <br>
+        <div class="cardwidth">
+        <mat-card *ngFor="let preview of preview">
+            <mat-card-header>
+              <img mat-card-avatar [src]="preview.img">
+              <mat-card-title>{{preview.title}}</mat-card-title>
+              <mat-card-subtitle>Really, they are!</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="preview.img">
+            <mat-card-content>
+              <p>Something pretty...</p>
+            </mat-card-content>
+            <mat-card-actions>
+               <button mat-button><mat-icon>star</mat-icon></button>
+               <button mat-button><mat-icon>share</mat-icon></button>
+             </mat-card-actions>
+          </mat-card>
+        </div>
+       
+        <mat-divider></mat-divider>
+        <br>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+          <button mat-raised-button color="warn">Publish</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+</mat-card>

@@ -102,12 +102,20 @@ position: fixed;
     transition: all 0.3s ease;
     color: white;
     font-size: 20px;
+    border-radius: 0 5px 5px 0;
+    padding: 15px;
+    
+    
+    
   }
   
   /* Social media icons*/
   .icon-bar a:hover {
     background-color: #000;
+ 
   }
+
+  
   
   .facebook {
     background: #3B5998;
@@ -137,3 +145,5 @@ position: fixed;
     background: #4e4d4d;
     color: rgb(10, 10, 10);
   }
+
+ 

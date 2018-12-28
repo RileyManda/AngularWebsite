@@ -63,6 +63,12 @@ import { AngularFireModule } from '@angular/fire';
 import { MTabsComponent } from './m-tabs/m-tabs.component';
 import { MContactmeComponent } from './m-contactme/m-contactme.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { DPorfolioComponent } from './d-porfolio/d-porfolio.component';
+import { DSkillsComponent } from './d-skills/d-skills.component';
+import { DXpComponent } from './d-xp/d-xp.component';
+import { DCvComponent } from './d-cv/d-cv.component';
+import { DHobbiesComponent } from './d-hobbies/d-hobbies.component';
+import { DAboutComponent } from './d-about/d-about.component';
 
 
 
@@ -98,6 +104,12 @@ const appRoutes: Routes = [
     MContactmeComponent,
     DashboardComponent,
     MatProgressBar,
+    DSkillsComponent,
+    DXpComponent,
+    DPorfolioComponent,
+    DCvComponent,
+    DHobbiesComponent,
+    DAboutComponent
    
     
   

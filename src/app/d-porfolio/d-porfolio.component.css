@@ -1,0 +1,58 @@
+table {
+    width: 100%;
+  }
+
+  .table-container {
+    height: 400px;
+    overflow: auto;
+  }
+  .text-elements{
+    width: 100%;
+    overflow: auto;
+  }
+  .cardwidth{
+    width: 45%;
+    overflow: auto;
+  
+  }
+
+  .midcardwidth{
+    width: 100%;
+  
+  }
+  .txt-full-width {
+    width: 100%;
+  }
+
+  .title-form {
+    min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  }
+
+  .description-full-width {
+    width: 100%;
+  }
+  .description-form {
+    min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  }
+
+  .flex-child{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .img {
+    width: 100%;
+    margin-bottom: 18%;
+  }
+  .container {
+    min-height: 100%;
+    width: 50%;
+  }
+  .card-picture {
+    width: 23%;
+    margin-bottom: 2%;
+  }
