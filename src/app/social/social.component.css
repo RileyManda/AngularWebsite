@@ -1,0 +1,60 @@
+#Social a {
+    position: absolute;
+    right: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+  }
+  
+  #Social a:hover {
+    right: 0;
+  }
+  
+  
+  #linkedin {
+    top: 80px;
+    background: #007bb5;
+    color: white;
+  }
+  #github {
+    top: 140px;
+    background: #4e4d4d;
+    color: rgb(10, 10, 10);
+  }
+   
+  #facebook {
+    top: 200px;
+    background: #3B5998;
+    color: white;
+  }
+  
+  #twitter {
+    top: 260px;
+    background: #55ACEE;
+    color: white;
+  }
+  
+  #google {
+    top: 320px;
+    background: #dd4b39;
+    color: white;
+  }
+  
+
+  
+  #youtube {
+    top: 380px;
+    background: #bb0000;
+    color: white;
+  }
+
+  #instagram {
+    top: 440px;
+    background: #ee6f6f;
+    color: white;
+  }
+ 

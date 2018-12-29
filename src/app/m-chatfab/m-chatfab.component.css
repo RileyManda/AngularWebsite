@@ -1,6 +1,15 @@
 .fabby{
     position: fixed;
+    z-index:5;
   bottom: 20px;
   right: 20px;
   color: white;
   }
+.fab{
+  position : fixed;
+  z-index:5;
+  display : flex;
+  align-self : flex-end;
+  bottom : 10%;
+  margin-bottom : 68px;
+}

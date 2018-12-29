@@ -12,12 +12,16 @@
       </mat-toolbar>
       <mat-nav-list>
           <mat-divider ></mat-divider>
+          <a mat-list-item routerLink="./"  matTooltip="Industry Experience"
+          tooltip-position="above" ><mat-icon>home</mat-icon>Home</a>
+          <mat-divider ></mat-divider>
           <a mat-list-item routerLink="./dashboard" routerLinkActive="active"
           matTooltip="DashBoard is reserved for Admins Only" tooltip-position="above">
             <mat-icon class="icon">dashboard</mat-icon>  
             <span class="label">Dashboard</span>
           </a>
           <mat-divider></mat-divider>
+        
         <a mat-list-item routerLink="./m-exp" routerLinkActive="active" matTooltip="Industry Experience"
         tooltip-position="above" ><mat-icon>build</mat-icon>Xp</a>
         <a mat-list-item routerLink="./m-cv" routerLinkActive="active" matTooltip="Download or view my CV"
@@ -51,12 +55,18 @@
           *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <span>RileyManda</span>
+        <a routerLink="./"><span>RileyManda</span></a>
       
         <span class="spacer"></span>
           <!--Hide items on sm screens-->
            <!-- <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs></div>-->
         <div fxFlex fxShow="true" fxHide.xs="true">
+
+            <a routerLink="./" matTooltip="Industry Experience"
+            tooltip-position="above" mat-button>
+                <mat-icon>home</mat-icon>
+                Home
+              </a>
             <a routerLink="./m-exp" matTooltip="Industry Experience"
             tooltip-position="above" mat-button>
                 <mat-icon>build</mat-icon>

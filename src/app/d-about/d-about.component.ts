@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'd-about',
+  selector: 'app-d-about',
   templateUrl: './d-about.component.html',
   styleUrls: ['./d-about.component.css']
 })

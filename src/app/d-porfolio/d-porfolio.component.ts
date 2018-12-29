@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'd-porfolio',
+  selector: 'app-d-porfolio',
   templateUrl: './d-porfolio.component.html',
   styleUrls: ['./d-porfolio.component.css']
 })

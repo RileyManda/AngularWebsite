@@ -25,7 +25,7 @@ const XPELEMENT_DATA: XpElement[] = [
 ];
 
 @Component({
-  selector: 'd-xp',
+  selector: 'app-d-xp',
   templateUrl: './d-xp.component.html',
   styleUrls: ['./d-xp.component.css']
 })

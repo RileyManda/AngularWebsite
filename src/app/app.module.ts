@@ -47,7 +47,7 @@ import {
   MatSelectModule,
 } from '@angular/material';
 
-import { AboutComponent } from './about/about.component';
+
 import { LayoutModule } from '@angular/cdk/layout';
 import { MToolbarComponent } from './m-toolbar/m-toolbar.component';
 import { MCardComponent } from './m-card/m-card.component';
@@ -69,13 +69,17 @@ import { DXpComponent } from './d-xp/d-xp.component';
 import { DCvComponent } from './d-cv/d-cv.component';
 import { DHobbiesComponent } from './d-hobbies/d-hobbies.component';
 import { DAboutComponent } from './d-about/d-about.component';
+import { HomeComponent } from './home/home.component';
+import { SocialComponent } from './social/social.component';
+import { MAboutComponent } from './m-about/m-about.component';
 
 
 
 
 
 const appRoutes: Routes = [
-  { path: 'about', component: AboutComponent},
+  { path: '', component: HomeComponent},
+  { path: 'm-about', component: MAboutComponent},
   { path: 'm-exp', component: MExpComponent},
   { path: 'm-cv', component: MCvComponent},
   { path: 'm-portfolio', component: MPortfolioComponent},
@@ -89,7 +93,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
+    MAboutComponent,
     MToolbarComponent,
     MCardComponent,
     MBottomSheetComponent,
@@ -109,7 +113,9 @@ const appRoutes: Routes = [
     DPorfolioComponent,
     DCvComponent,
     DHobbiesComponent,
-    DAboutComponent
+    DAboutComponent,
+    HomeComponent,
+    SocialComponent
    
     
   

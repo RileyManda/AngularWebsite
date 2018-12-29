@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="card-width">
   <mat-card-header>
     <span><mat-icon>person</mat-icon></span>
      <mat-chip-list>
@@ -9,4 +9,14 @@
   <mat-form-field class="txt-full-width">
       <textarea matInput placeholder="About Me"></textarea>
     </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-card-actions color="primary">
+        <button mat-icon-button color="primary">
+            <mat-icon aria-label="Example icon-button with a heart icon">clear</mat-icon>
+          </button>
+          <button mat-icon-button>
+              <mat-icon>check</mat-icon>
+            </button>
+        
+    </mat-card-actions>
 </mat-card>

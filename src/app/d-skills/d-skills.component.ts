@@ -24,7 +24,7 @@ const MXELEMENT_DATA: MxElement[] = [
 
 
 @Component({
-  selector: 'd-skills',
+  selector: 'app-d-skills',
   templateUrl: './d-skills.component.html',
   styleUrls: ['./d-skills.component.css']
 })
